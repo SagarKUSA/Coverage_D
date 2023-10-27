@@ -84,7 +84,7 @@ public class CoverageServiceImpl implements CoverageService{
 	}
 
 	@Override
-public List<Coverage> getAllBills(Integer pageNumber, Integer pageSize , String sortBy) {
+public List<Coverage> getAllCoverage(Integer pageNumber, Integer pageSize , String sortBy) {
 		
 		Pageable paging = PageRequest.of(pageNumber, pageSize , Sort.by("coverageName").ascending());
 		

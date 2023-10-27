@@ -19,5 +19,5 @@ public interface CoverageService {
 	
 	public Coverage searchCoverage (String coverageName);
 	
-	public List<Coverage> getAllBills(Integer pageNumber , Integer pageSize , String sortBy);
+	public List<Coverage> getAllCoverage(Integer pageNumber , Integer pageSize , String sortBy);
 }
