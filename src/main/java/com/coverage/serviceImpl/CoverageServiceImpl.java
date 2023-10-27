@@ -1,11 +1,17 @@
 package com.coverage.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.billing.model.Bill;
 import com.coverage.exception.ResourceNotFoundException;
 import com.coverage.model.Coverage;
 import com.coverage.repository.CoverageRepository;
@@ -76,7 +82,19 @@ public class CoverageServiceImpl implements CoverageService{
 		}
 		return search;
 	}
+
+	@Override
+public List<Coverage> getAllBills(Integer pageNumber, Integer pageSize , String sortBy) {
+		
+		Pageable paging = PageRequest.of(pageNumber, pageSize , Sort.by("coverageName").ascending());
+		
+		Page< Coverage> coverageResult = coverageRepository.findAll(paging);
+		
+		if(coverageResult.hasContent()) {
+			return coverageResult.getContent();
+	}
+         return new ArrayList<Coverage>();
 	
-	
+	}
 
 }
