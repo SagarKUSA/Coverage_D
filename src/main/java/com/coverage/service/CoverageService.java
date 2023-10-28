@@ -2,7 +2,7 @@ package com.coverage.service;
 
 import java.util.List;
 
-import com.billing.model.Bill;
+
 import com.coverage.model.Coverage;
 
 public interface CoverageService {

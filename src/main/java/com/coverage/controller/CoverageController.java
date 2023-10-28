@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.billing.model.Bill;
 import com.coverage.model.Coverage;
 import com.coverage.service.CoverageService;
 

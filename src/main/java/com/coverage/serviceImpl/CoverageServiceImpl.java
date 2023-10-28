@@ -11,7 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.billing.model.Bill;
+
 import com.coverage.exception.ResourceNotFoundException;
 import com.coverage.model.Coverage;
 import com.coverage.repository.CoverageRepository;
