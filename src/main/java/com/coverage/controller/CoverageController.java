@@ -88,5 +88,14 @@ public class CoverageController {
 		return search;
 
 	}
-
+	
+	@GetMapping("/coverageByPage")
+	public List<Coverage> getCoverageByPage(@RequestParam (defaultValue = "0" )Integer pageNumber, 
+			                        @RequestParam (defaultValue = "100") Integer pageSize,
+			                        @RequestParam (defaultValue = "coverageName")String sortBy){
+		
+		List<Coverage> coverageByPage = coverageService.getAllCoverage(pageNumber, pageSize , sortBy);
+		
+		return coverageByPage;
+	}
 }
